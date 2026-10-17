@@ -40,7 +40,7 @@ function setup(){
  let cells=[];MAP.forEach((row,y)=>[...row].forEach((c,x)=>{if(c==='.'&&!(x===1&&y===1))cells.push({x,y})}));orbs=shuffle(cells).slice(0,10);
  $('score').textContent='0000';$('progress').textContent='0 / 10';$('orbs').textContent='10';$('lives').textContent='3';$('startScreen').hidden=false;$('questionModal').hidden=true;$('result').hidden=true;resize();
 }
-function startGame(){if(running)return;running=true;paused=false;$('startScreen').hidden=true;player.dx=0;player.dy=0;wanted={dx:0,dy:0};clearInterval(moveTimer);moveTimer=setInterval(step,140);draw()}
+function startGame(){if(running)return;running=true;paused=false;$('startScreen').hidden=true;player.dx=0;player.dy=0;wanted={dx:0,dy:0};clearInterval(moveTimer);moveTimer=setInterval(step,260);draw()}
 function setDirection(dx,dy){if(!running||paused)return;wanted={dx,dy};}
 function step(){
  if(!running||paused)return;
