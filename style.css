@@ -72,3 +72,8 @@ body{min-width:0}
 @media(min-width:601px) and (max-width:900px){
   .scene{height:min(64vh,620px);min-height:470px}
 }
+/* Mobile touch comfort for Capital Letter Maze */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:0;min-height:100vh;min-height:100svh}
+button,a{-webkit-tap-highlight-color:transparent}
+@media(max-width:600px){.move{min-width:44px;min-height:44px;touch-action:manipulation}.actions button{min-height:44px}.modal{overflow-y:auto}.question-card,.win-card{max-height:calc(100svh - 24px);overflow-y:auto}}
