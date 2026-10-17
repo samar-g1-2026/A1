@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Singular and plural</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#080617,#24103f);color:#fff;font-family:"Trebuchet MS",Arial,sans-serif}main{width:min(1150px,100%);margin:auto;padding:10px}.top{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.title{font-size:clamp(22px,4vw,36px);font-weight:900}.title span{color:#69eaff}.back,.stat,.ctrl,.soundBtn{background:#21154a;border:2px solid #684fd0;color:#fff;border-radius:14px;font-weight:900}.back{padding:9px 13px;text-decoration:none}.stats{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}.stat{padding:7px 10px}.soundBtn{padding:8px 11px;cursor:pointer}.box{position:relative;margin-top:8px;border:5px solid #5533b2;border-radius:25px;overflow:hidden;background:#100923;box-shadow:0 15px 45px #0008}.box canvas{display:block;width:100%;height:auto;touch-action:none}.controls{display:flex;justify-content:center;gap:10px;padding:10px}.ctrl{width:72px;height:54px;font-size:26px;box-shadow:0 5px #140b32;touch-action:none;cursor:pointer}.ctrl:active{transform:translateY(4px);box-shadow:0 1px #140b32}.help{text-align:center;color:#cfc6ef;font-size:14px;font-weight:800;margin:2px 0}.modal{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:#05030ddd;padding:15px}.modal.show{display:flex}.card{width:min(640px,94%);background:#fff;color:#211c48;border:5px solid #69eaff;border-radius:25px;padding:24px;text-align:center;box-shadow:0 15px 40px #0008}.card h2{margin:0 0 8px;color:#7225a4}.word{font-size:clamp(42px,9vw,70px);font-weight:900;color:#172080;margin:16px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer,.restart{border:0;border-radius:16px;padding:15px;font-size:20px;font-weight:900;color:#fff;cursor:pointer}.answer:first-child{background:#277de5;box-shadow:0 5px #174f9d}.answer:last-child{background:#28b95c;box-shadow:0 5px #167d3e}.answer:active,.restart:active{transform:translateY(3px)}.feedback{min-height:28px;margin-top:12px;font-weight:900}.restart{background:#7a40b2}.small{font-weight:800;color:#665f7e}.hint{background:#f1eaff;border-radius:12px;padding:9px;margin:10px 0;font-weight:800;color:#5d3987}.soundHint{position:absolute;left:18px;bottom:16px;background:#17102fdd;border:2px solid #6049a8;border-radius:12px;padding:7px 10px;font-size:12px;font-weight:900;color:#e9e2ff;pointer-events:none}@media(max-width:600px){main{padding:6px}.stats{width:100%;margin-left:0}.stat{font-size:12px}.ctrl{width:64px;height:50px}.help{font-size:12px}.soundHint{font-size:10px}}
+</style>
+<link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#713baa"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Grammar Adventure">
+<style>
+/* Responsive layout for phones and tablets */
+html,body{width:100%;overflow-x:hidden}
+main{width:min(1150px,100%);padding:clamp(6px,1.5vw,14px)}
+.box{width:100%}
+.box canvas{width:100%;height:auto;aspect-ratio:1100/620;max-height:calc(100vh - 170px);object-fit:contain}
+.controls{flex-wrap:wrap}
+@media(max-width:600px){
+  body{background:linear-gradient(180deg,#09051a 0,#1d0d36 55%,#0b0619 100%)}
+  main{padding:5px 6px 10px}
+  .top{display:grid;grid-template-columns:1fr auto;gap:5px}
+  .title{font-size:21px;line-height:1.05}
+  .back{grid-column:1/-1;order:3;padding:7px 9px;font-size:12px;text-align:left}
+  .soundBtn{grid-column:1/-1;width:100%;padding:7px;font-size:12px}
+  .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);width:100%;gap:4px;margin:0}
+  .stat{padding:6px 3px;font-size:11px;text-align:center;white-space:nowrap}
+  .box{margin-top:5px;border-width:3px;border-radius:18px}
+  .box canvas{max-height:none}
+  .controls{gap:7px;padding:8px 2px}
+  .ctrl{flex:1;min-width:56px;max-width:86px;height:48px;border-radius:13px;font-size:22px}
+  .help{font-size:10px;line-height:1.35;margin:2px 5px}
+  .soundHint{left:8px;right:8px;bottom:8px;text-align:center;font-size:10px}
+  /* Questions must escape the game canvas on phones. */
+  .modal{position:fixed;inset:0;padding:12px;z-index:1000;overflow-y:auto;background:rgba(5,2,18,.88)}
+  .card{width:min(94vw,520px);max-height:calc(100vh - 24px);overflow:auto;padding:18px 12px;border-width:3px;border-radius:18px}
+  .card h2{font-size:20px}
+  .word{font-size:clamp(38px,13vw,58px);margin:10px}
+  .answers{grid-template-columns:1fr;gap:8px}
+  .answer,.restart{padding:12px 10px;font-size:17px;min-height:50px}
+  .hint{font-size:12px;line-height:1.35}
+}
+@media(min-width:601px) and (max-width:900px){
+  .box canvas{max-height:calc(100vh - 180px)}
+  .controls{padding:8px}
+}
+</style>
+</head>
+<body>
+<main>
+<header class="top"><div class="title">Singular and plural</div><a class="back" href="../../">← Game Hub</a><button class="soundBtn" id="soundBtn" type="button">🔊 Music LOUD</button><div class="stats"><div class="stat">⭐ <b id="score">0</b></div><div class="stat">💎 <b id="jewels">0</b>/6</div><div class="stat">❤️ <b id="lives">3</b></div><div class="stat">❓ <b id="answered">0</b>/6</div></div></header>
+<section class="box"><canvas id="game" width="1100" height="620"></canvas><div class="soundHint" id="soundHint">🎵 Tap or press a key to start loud arcade music</div>
+<div class="modal" id="question"><div class="card"><h2>💎 JEWEL UNLOCKED!</h2><div class="hint">Answer correctly to unlock your jewel and continue the game.</div><div>Is this noun <b>singular</b> or <b>plural</b>?</div><div class="word" id="word">cats</div><div class="answers"><button class="answer" data-a="singular" type="button">Singular</button><button class="answer" data-a="plural" type="button">Plural</button></div><div class="feedback" id="feedback"></div></div></div>
+<div class="modal" id="pause"><div class="card"><h2>⏸ PAUSED</h2><p class="small">Ready? Continue the treasure hunt!</p><button class="restart" id="resume" type="button">▶ Resume</button></div></div>
+<div class="modal" id="end"><div class="card"><h2 id="endTitle">🏆 HEIST COMPLETE!</h2><p class="small" id="endText"></p><button class="restart" id="again" type="button">🔄 Play Again</button></div></div>
+</section>
+<div class="controls"><button class="ctrl" data-k="left" type="button">◀</button><button class="ctrl" data-k="jump" type="button">▲</button><button class="ctrl" data-k="right" type="button">▶</button><button class="ctrl" id="pauseBtn" type="button">⏸</button></div>
+<p class="help">← → / A D = Move • ↑ / W / Space = Jump • Collect 6 💎 • Answer correctly after every jewel • Reach the EXIT!</p>
+</main>
+<script>
+(function(){'use strict';
+const c=document.getElementById('game'),x=c.getContext('2d'),W=1100,H=620;
+const qs=[['cat','singular'],['cats','plural'],['map','singular'],['bins','plural'],['door','singular'],['pots','plural'],['day','singular'],['foxes','plural'],['hat','singular'],['dots','plural'],['book','singular'],['books','plural'],['car','singular'],['cars','plural'],['box','singular'],['boxes','plural'],['tree','singular'],['trees','plural']];
+let score=0,jewels=0,lives=3,answered=0,qi=0,paused=false,ended=false,asking=false,cam=0,musicOn=true,audio=null,musicTimer=null,lastStepX=70,keys={left:false,right:false};let p,plats,gems;
+const el=id=>document.getElementById(id);
+function stats(){el('score').textContent=score;el('jewels').textContent=jewels;el('lives').textContent=lives;el('answered').textContent=answered}
+function hide(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'))}
+function build(){p={x:70,y:470,w:48,h:68,vy:0,on:false,face:1,walk:0};plats=[{x:0,y:545,w:520,h:40},{x:560,y:500,w:400,h:30},{x:1000,y:545,w:500,h:40},{x:1540,y:475,w:360,h:30},{x:1940,y:545,w:470,h:40},{x:2450,y:470,w:400,h:30},{x:2890,y:545,w:500,h:40}];const spots=[{x:250,y:505},{x:700,y:460},{x:1190,y:505},{x:1680,y:435},{x:2110,y:505},{x:2600,y:430}];gems=spots.map((g,i)=>({x:g.x,y:g.y,got:false,id:i+1}))}
+function reset(){score=0;jewels=0;lives=3;answered=0;qi=0;paused=false;ended=false;asking=false;cam=0;hide();build();stats();lastStepX=p.x}
+function hit(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+function initAudio(){if(audio){if(audio.state==='suspended')audio.resume();return}try{audio=new (window.AudioContext||window.webkitAudioContext)();audio.resume();}catch(e){audio=null;return}el('soundHint').style.display='none';if(musicOn)startMusic()}
+function tone(freq,dur,type='square',gain=.06,delay=0){if(!audio||!musicOn)return;const o=audio.createOscillator(),g=audio.createGain();o.type=type;o.frequency.value=freq;g.gain.setValueAtTime(.0001,audio.currentTime+delay);g.gain.exponentialRampToValueAtTime(gain,audio.currentTime+delay+.008);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+delay+dur);o.connect(g);g.connect(audio.destination);o.start(audio.currentTime+delay);o.stop(audio.currentTime+delay+dur+.03)}
+function stepSound(){tone(190,.07,'square',.075);tone(125,.09,'triangle',.05,.055)}
+function jumpSound(){tone(330,.08,'square',.065);tone(520,.12,'square',.05,.07)}
+function gemSound(){tone(660,.09,'triangle',.09);tone(880,.13,'triangle',.07,.09);tone(1040,.16,'sine',.055,.2)}
+function correctSound(){tone(523,.09,'square',.08);tone(659,.09,'square',.07,.1);tone(784,.16,'square',.07,.2)}
+function wrongSound(){tone(180,.16,'sawtooth',.075);tone(120,.18,'sawtooth',.055,.14)}
+function winSound(){[523,659,784,1047].forEach((f,i)=>tone(f,.18,'triangle',.09,i*.12))}
+function startMusic(){if(!audio||!musicOn||musicTimer)return;let beat=0;const melody=[262,330,392,330,294,349,440,349];musicTimer=setInterval(()=>{if(!audio||!musicOn||paused||ended)return;tone(melody[beat%melody.length],.19,'square',.052);if(beat%2===0)tone(131,.15,'triangle',.035);if(beat%4===3)tone(196,.07,'square',.025,.06);beat++},260)}
+function stopMusic(){if(musicTimer){clearInterval(musicTimer);musicTimer=null}}
+function toggleSound(){musicOn=!musicOn;el('soundBtn').textContent=musicOn?'🔊 Music LOUD':'🔇 Sound OFF';if(musicOn){initAudio();if(audio)startMusic()}else stopMusic()}
+function jump(){initAudio();if(!paused&&!ended&&!asking&&p.on){p.vy=-13;p.on=false;jumpSound()}}
+function ask(){if(asking||ended)return;asking=true;paused=true;keys.left=false;keys.right=false;const q=qs[qi++%qs.length];el('word').textContent=q[0];el('question').dataset.answer=q[1];el('feedback').textContent='';el('question').classList.add('show');tone(740,.12,'sine',.065);tone(980,.14,'sine',.055,.13)}
+function answer(v){if(!asking)return;const ok=v===el('question').dataset.answer;if(ok){score+=60;answered++;correctSound();el('feedback').textContent='🎉 Correct! +60 points — Keep going!';el('feedback').style.color='#168d49';setTimeout(()=>{el('question').classList.remove('show');asking=false;paused=false;stats()},650)}else{lives--;wrongSound();stats();el('feedback').textContent=lives>0?'❌ Not quite. Try the same question again! -1 ❤️':'❌ No lives left. Start again!';el('feedback').style.color='#d43b61';if(lives<=0){setTimeout(()=>finish(false),900)}else{setTimeout(()=>{el('feedback').textContent='💡 Choose the correct answer to unlock the jewel.';},700)}}}
+function finish(win){ended=true;paused=true;hide();if(win)winSound();el('endTitle').textContent=win?'🏆 HEIST COMPLETE!':'💗 NICE TRY!';el('endText').textContent=win?'Amazing! You collected all 6 jewels, answered all 6 questions, and escaped through the EXIT! Final score: '+score+' ⭐':'You found '+jewels+' jewels and answered '+answered+' questions. Try again!';el('end').classList.add('show')}
+function update(){if(paused||ended||asking)return;const speed=4.8;const dx=(keys.right?speed:0)-(keys.left?speed:0);p.x+=dx;if(dx){p.face=dx>0?1:-1;if(Math.abs(p.x-lastStepX)>=48){stepSound();lastStepX=p.x}}p.x=Math.max(0,Math.min(3340,p.x));p.vy+=.62;const old=p.y;p.y+=p.vy;p.on=false;for(const q of plats){if(p.x+p.w>q.x&&p.x<q.x+q.w&&old+p.h<=q.y&&p.y+p.h>=q.y&&p.vy>=0){p.y=q.y-p.h;p.vy=0;p.on=true}}if(p.y>H+100){p.y=400;p.vy=0;p.x=Math.max(30,p.x-180);lastStepX=p.x}for(const g of gems){if(!g.got&&hit(p,{x:g.x-18,y:g.y-18,w:36,h:36})){g.got=true;jewels++;score+=20;gemSound();stats();ask();return}}if(jewels===6&&answered===6&&p.x>3190&&p.x<3340){finish(true);return}cam+=(Math.max(0,Math.min(2290,p.x-330))-cam)*.12;p.walk+=Math.abs(dx)*.18}
+function diamond(g){const X=g.x-cam,Y=g.y;x.save();x.translate(X,Y);x.rotate(Math.sin(performance.now()/500+g.x)*.12);x.shadowBlur=22;x.shadowColor='#29d9ff';x.fillStyle='#51e6ff';x.beginPath();x.moveTo(0,-20);x.lineTo(18,-7);x.lineTo(11,17);x.lineTo(-11,17);x.lineTo(-18,-7);x.closePath();x.fill();x.shadowBlur=0;x.fillStyle='#fff';x.fillRect(-4,-11,5,9);x.restore()}
+function player(){const X=p.x-cam,Y=p.y,R=Math.sin(p.walk)*4;x.save();x.translate(X+24,Y+34);x.scale(p.face,1);x.fillStyle='rgba(0,0,0,.28)';x.beginPath();x.ellipse(0,37,25,7,0,0,Math.PI*2);x.fill();x.strokeStyle='#f052aa';x.lineWidth=7;x.lineCap='round';x.beginPath();x.moveTo(-17,5);x.quadraticCurveTo(-45,20,-29,-10);x.stroke();x.fillStyle='#f052aa';x.beginPath();x.arc(0,-18,22,0,Math.PI*2);x.fill();x.fillStyle='#17132d';x.fillRect(-21,-23,42,14);x.fillStyle='#fff';x.fillRect(-11,-20,7,6);x.fillRect(5,-20,7,6);x.fillStyle='#6e39c2';x.fillRect(-19,3,38,30);x.fillStyle='#f052aa';x.fillRect(-24,9,8,24);x.fillRect(16,9,8,24);x.fillRect(-16,31,11,20+R);x.fillRect(5,31,11,20-R);x.fillStyle='#30204c';x.fillRect(-20,50+R,15,7);x.fillRect(5,50-R,15,7);x.restore()}
+function draw(){const bg=x.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#0b0926');bg.addColorStop(1,'#30134d');x.fillStyle=bg;x.fillRect(0,0,W,H);for(let i=0;i<70;i++){x.fillStyle='rgba(255,255,255,.32)';x.fillRect((i*97-cam*.16)%W,(i*43)%310,2,2)}for(let i=0;i<9;i++){let bx=i*430-cam*.35;x.fillStyle='#18153b';x.fillRect(bx,150,260,350);x.fillStyle='#272354';x.fillRect(bx+25,190,210,90);x.fillStyle='#3b3470';x.fillRect(bx+55,315,150,90)}for(const q of plats){x.fillStyle='#8d4052';x.fillRect(q.x-cam,q.y,q.w,q.h);x.fillStyle='#e5a04e';x.fillRect(q.x-cam,q.y,q.w,6);x.fillStyle='#632d43';for(let z=q.x+14;z<q.x+q.w;z+=42)x.fillRect(z-cam,q.y+9,4,q.h-9)}for(const g of gems)if(!g.got)diamond(g);const ex=3250-cam;x.fillStyle='#22d06d';x.fillRect(ex,465,72,80);x.fillStyle='#0c6e40';x.fillRect(ex+10,478,52,67);x.fillStyle='#fff';x.font='900 15px Arial';x.fillText('EXIT',ex+15,455);x.font='28px Arial';x.fillText('🏆',ex+18,505);if(jewels<6){x.fillStyle='#ffd84d';x.font='900 15px Arial';x.fillText('🔒 EXIT',ex-10,570)}else if(answered<6){x.fillStyle='#ffdc58';x.font='900 15px Arial';x.fillText('❓ Answer the last question!',ex-95,570)}else{x.fillStyle='#69ff9a';x.font='900 16px Arial';x.fillText('✨ GO TO EXIT!',ex-55,570)}player();x.fillStyle='#fff';x.font='900 21px Arial';x.fillText('Singular and plural',20,31);x.font='bold 14px Arial';x.fillStyle='#c7c0ef';x.fillText('Collect a jewel → answer → keep going → reach the EXIT!',20,54);x.fillStyle='#ffd84d';x.font='900 16px Arial';x.fillText('Jewels left: '+(6-jewels),20,80)}
+function loop(){update();draw();requestAnimationFrame(loop)}
+function press(k,on){if(k==='left')keys.left=on;if(k==='right')keys.right=on;if(k==='jump'&&on)jump()}
+document.getElementById('soundBtn').addEventListener('click',()=>{initAudio();toggleSound()});document.querySelectorAll('.answer').forEach(b=>b.addEventListener('click',()=>{initAudio();answer(b.dataset.a)}));el('again').onclick=()=>{initAudio();reset()};el('resume').onclick=()=>{paused=false;el('pause').classList.remove('show');if(musicOn)startMusic()};el('pauseBtn').onclick=()=>{if(ended||asking)return;initAudio();paused=!paused;el('pause').classList.toggle('show',paused);if(paused)stopMusic();else startMusic()};document.querySelectorAll('.ctrl[data-k]').forEach(b=>{b.addEventListener('pointerdown',e=>{e.preventDefault();initAudio();press(b.dataset.k,true)});b.addEventListener('pointerup',e=>{e.preventDefault();if(b.dataset.k!=='jump')press(b.dataset.k,false)});b.addEventListener('pointercancel',()=>{if(b.dataset.k!=='jump')press(b.dataset.k,false)});b.addEventListener('pointerleave',()=>{if(b.dataset.k!=='jump')press(b.dataset.k,false)})});document.addEventListener('keydown',e=>{initAudio();const k=e.key.toLowerCase();if(['arrowleft','a'].includes(k)){keys.left=true;e.preventDefault()}if(['arrowright','d'].includes(k)){keys.right=true;e.preventDefault()}if(['arrowup','w',' '].includes(k)){jump();e.preventDefault()}if(k==='p')el('pauseBtn').click()});document.addEventListener('keyup',e=>{const k=e.key.toLowerCase();if(['arrowleft','a'].includes(k))keys.left=false;if(['arrowright','d'].includes(k))keys.right=false});reset();loop();
+})();
+</script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('../../sw.js').catch(()=>{}));}</script>
+</body>
+</html>
