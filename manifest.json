@@ -1,0 +1,16 @@
+{
+  "name":"Grammar Adventure — Grade 1",
+  "short_name":"Grammar Adventure",
+  "description":"Educational games for Grade 1",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"any",
+  "background_color":"#eaf9ff",
+  "theme_color":"#713baa",
+  "icons":[
+    {"src":"icon.svg","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},
+    {"src":"icon.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+  ],
+  "prefer_related_applications":false
+}
