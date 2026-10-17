@@ -150,3 +150,83 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:760px){.hero-copy{position:relative;z-index:2}.arcade-art{pointer-events:none}.section-heading>div:first-child{min-width:0}.section-heading p{max-width:245px;line-height:1.4}.count-box{flex:0 0 auto}.game-card{touch-action:manipulation}.card-info{min-width:0;overflow-wrap:anywhere}.card-info h3{font-size:clamp(13px,3.8vw,16px);line-height:1.18}.card-description{font-size:10px}.install-card{max-height:calc(100svh - 24px);overflow:auto}.close-install{min-width:44px;min-height:44px}}
 @media(max-width:360px){.brand{gap:7px}.brand-gamepad{width:35px;height:35px;font-size:20px}.brand-text strong{font-size:13px;letter-spacing:-.4px}.brand-text small{font-size:6px;letter-spacing:1.2px}.install-btn{font-size:9px;padding:7px}.hero h1{font-size:37px}.game-card{grid-template-columns:78px minmax(0,1fr);min-height:152px}.card-info{padding:10px 8px}.card-description{font-size:9px}.card-bottom{flex-wrap:wrap}}
 @media(max-width:760px) and (orientation:landscape){.site-header{min-height:56px}.page{padding-top:9px}.hero{min-height:220px;padding:18px 22px}.hero h1{font-size:clamp(34px,6vw,46px);margin:10px 0}.arcade-art{top:0;bottom:0}.games-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.game-card{grid-template-columns:74px minmax(0,1fr);min-height:142px}.card-art{min-height:142px}}
+
+
+/* App-inspired redesign: soft 3D cards, cheerful colors, and phone navigation */
+:root{--lavender:#8465ed;--teal:#18b7aa;--deep:#27345b;--soft-ink:#27345b}
+body{background:linear-gradient(135deg,#f6f2ff 0%,#f1f8ff 48%,#f9f2ff 100%)}
+.site-header{padding-left:clamp(13px,4vw,46px);padding-right:clamp(13px,4vw,46px);border-bottom:1px solid #ebe7f8}
+.brand-gamepad{background:linear-gradient(145deg,#a18aff,#7654e7);box-shadow:0 5px 0 #6846c933}
+.brand-text em{color:#8060e8}
+.install-btn{border-radius:999px;background:#fff;box-shadow:0 4px 12px #51477c12}
+.hero{background:linear-gradient(120deg,#e1faf3,#e1f4ff 55%,#f0e7ff);border:1px solid #fff;box-shadow:0 12px 35px #7868bb14}
+.hero h1{font-size:clamp(40px,5.8vw,68px);line-height:.98}
+.hero h1 span{color:#8060e8}
+.hero-cta{border-radius:999px;background:#8465ed;color:#fff;border:0;box-shadow:0 5px 0 #6244c5}
+.hero-cta b{color:#fff}
+.arcade-art{opacity:.65}
+.pacman{background:#ffd75e;box-shadow:inset -10px -9px 0 #f3b43c,0 10px 20px #d69e3040}
+.games-section{padding-top:29px}
+.game-card{border-radius:24px;box-shadow:0 7px 0 #39465c0a,0 12px 25px #53637d12;transition:transform .18s,box-shadow .18s}
+.game-card:active{transform:scale(.985)}
+.card-art{border-radius:19px;margin:7px;min-height:calc(100% - 14px)}
+.card-info{padding:18px 16px 15px}
+.art-emoji{border-radius:24px;box-shadow:0 8px 16px #3b4d651b}
+.blue .card-art{background:linear-gradient(145deg,#bceff6,#e1fbf4)}
+.mint .card-art{background:linear-gradient(145deg,#b8f0db,#e6fae9)}
+.orange .card-art{background:linear-gradient(145deg,#ffe5a1,#fff3d3)}
+.violet .card-art{background:linear-gradient(145deg,#d9caff,#f1e9ff)}
+.card-tag{border-radius:999px}
+.play-pill b{border-radius:50%;background:linear-gradient(145deg,#a38aff,#7956e9);box-shadow:0 3px 0 #6443c3}
+.daily-card{display:flex;align-items:center;gap:14px;margin-top:18px;padding:16px 19px;border:1px solid #fff;border-radius:22px;background:linear-gradient(110deg,#9b82ff,#795be7);color:white;box-shadow:0 7px 0 #6a50c522,0 13px 28px #7960d322}
+.daily-star{flex:0 0 52px;height:52px;border-radius:17px;background:#ffffff2b;display:grid;place-items:center;font-size:34px}
+.daily-card>div:nth-child(2){flex:1;min-width:0}
+.daily-card b{font-size:17px}.daily-card p{margin:3px 0;font-size:12px;color:#f4efff}.daily-card small{font-size:10px;color:#e4dcff}
+.daily-count{padding:8px 10px;border-radius:999px;background:#ffffff25;font-size:10px;font-weight:900;white-space:nowrap}
+.progress-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:17px}
+.progress-strip>div{display:grid;grid-template-columns:35px 1fr;align-items:center;column-gap:8px;padding:13px;border:1px solid #fff;border-radius:18px;background:#ffffffc9;box-shadow:0 7px 18px #3b4d650a}
+.progress-strip span{grid-row:span 3;font-size:25px}.progress-strip b{font-size:10px;color:#7a8499}.progress-strip strong{font-size:22px;color:#283653}.progress-strip small{font-size:9px;color:#8792a5}
+.mobile-nav{display:none}
+@media(max-width:760px){
+ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+ .site-header{padding-top:max(8px,env(safe-area-inset-top));min-height:65px}
+ .brand-gamepad{width:39px;height:39px}
+ .brand-text strong{font-size:15px}
+ .hero{min-height:290px;padding:25px 20px;border-radius:25px}
+ .hero h1{font-size:clamp(39px,10vw,52px)}
+ .hero-copy{max-width:78%}
+ .arcade-art{width:54%;right:-9%;top:35%;bottom:0;opacity:.5}
+ .games-section{padding-top:25px}
+ .section-heading h2{font-size:23px}
+ .games-grid{grid-template-columns:1fr;gap:12px}
+ .game-card{grid-template-columns:clamp(98px,29vw,125px) minmax(0,1fr);min-height:151px;border-radius:22px}
+ .card-art{margin:7px;min-height:137px;border-radius:17px}
+ .card-info{padding:12px 11px 10px}
+ .card-info h3{font-size:15px}
+ .card-description{font-size:10px;line-height:1.4}
+ .card-ready{font-size:6px}
+ .daily-card{margin-top:14px;padding:13px;gap:10px;border-radius:20px}
+ .daily-star{flex-basis:43px;height:43px;font-size:28px;border-radius:14px}
+ .daily-card b{font-size:15px}.daily-card p{font-size:10px}.daily-card small{font-size:9px}
+ .daily-count{font-size:8px;padding:7px}
+ .progress-strip{gap:7px;margin-top:13px}
+ .progress-strip>div{grid-template-columns:1fr;text-align:center;justify-items:center;gap:2px;padding:10px 4px;border-radius:16px}
+ .progress-strip span{grid-row:auto;font-size:23px}
+ .progress-strip b{font-size:9px}.progress-strip strong{font-size:20px}.progress-strip small{font-size:8px}
+ footer{padding-bottom:12px}
+ .mobile-nav{position:fixed;z-index:30;left:10px;right:10px;bottom:max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:8px 5px 7px;border:1px solid #fff;border-radius:22px;background:#ffffffed;box-shadow:0 8px 30px #35415f25;backdrop-filter:blur(16px)}
+ .mobile-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;color:#939bb0;border-radius:14px;min-height:44px}
+ .mobile-nav a span{font-size:20px;line-height:1.1}
+ .mobile-nav a small{font-size:9px;font-weight:800}
+ .mobile-nav a.active{color:#7654e7;background:#f0ebff}
+}
+@media(max-width:360px){
+ .teacher{display:none}
+ .game-card{grid-template-columns:88px minmax(0,1fr)}
+ .card-info h3{font-size:13px}
+ .card-description{font-size:9px}
+ .daily-count{display:none}
+ .hero-copy{max-width:84%}
+ .progress-strip>div{padding:8px 2px}
+}
+@media(prefers-reduced-motion:reduce){.game-card,.art-emoji{transition:none!important}}
