@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capital Letter Maze — Grammar Adventure</title>
+<link rel="stylesheet" href="../../style.css">
+<link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#713baa"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Grammar Adventure">
+</head>
+<body>
+<div class="letter-bg" aria-hidden="true">A b C d E f G h I j K l M n O p Q r S t U v W x Y z</div>
+<header class="top">
+  <div class="brand"><a href="../../" aria-label="Back to games" style="text-decoration:none"><div class="badge">A<span>★</span></div></a><div><h1>Capital Letter Maze</h1><p>Grammar Adventure • Days &amp; Months</p></div></div>
+  <div class="teacher-title"><div class="teacher-name">Ms. Samar Gomaa</div><div class="teacher-grade">Grade 1</div></div>
+  <div class="hud"><div>⭐ <b id="score">0</b><small>SCORE</small></div><div>❤️ <b id="lives">3</b></div><div>🚩 <b id="checkpointCount">0/5</b></div></div>
+</header>
+<main><section class="game-shell">
+  <div class="scene"><div class="sky-decor">☁️</div><div class="sky-decor cloud2">☁️</div><div class="sun">☀️</div><div class="sign">CAPITAL LETTER<br><span>MAZE</span></div><div id="message" class="message">Explore the maze and find all ⭐ checkpoints!</div><div id="maze" class="maze"></div><div id="player" class="player">🧒</div><div class="guide">🦊<span>Find the stars!</span></div></div>
+  <div class="bottom"><div class="hint">💡 <b>Mission:</b> Find every ⭐, answer correctly, then reach the 🏰 Grammar Gate.</div><div class="dpad"><button class="move up" data-dir="up">▲<small>UP</small></button><button class="move left" data-dir="left">◀<small>LEFT</small></button><button class="move down" data-dir="down">▼<small>DOWN</small></button><button class="move right" data-dir="right">▶<small>RIGHT</small></button></div><div class="actions"><a href="../../" style="text-decoration:none"><button type="button">🏠 Games</button></a><button id="sound">🔊 Sound</button><button id="pause">⏸ Pause</button><button id="restart">🔄 New Maze</button></div></div>
+</section></main>
+<div id="questionModal" class="modal hidden"><div class="question-card"><div class="q-star">⭐</div><div class="q-label">GRAMMAR CHECKPOINT</div><h2 id="questionText"></h2><div id="answers" class="answers"></div><div id="feedback"></div></div></div>
+<div id="winModal" class="modal hidden"><div class="win-card"><div class="confetti">🎉</div><div class="trophy">🏆</div><h2>MISSION COMPLETE!</h2><p>You mastered capital letters!</p><div class="final-score">⭐ <span id="finalScore">0</span> points</div><div class="stars">⭐⭐⭐⭐⭐</div><button id="again">PLAY A NEW MAZE</button><a href="../../" style="display:block;margin-top:12px;color:#7b40ad;font-weight:900">🏠 Back to Games</a></div></div>
+<script src="../../script.js"></script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('../../sw.js').catch(()=>{}));}</script>
+</body></html>
