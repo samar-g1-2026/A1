@@ -142,3 +142,11 @@ button{touch-action:manipulation}
 
 /* Mobile tap comfort */
 @media(max-width:760px){.hero-cta{min-height:44px}.install-btn{min-height:42px}.game-card{min-width:0}.play-pill b{width:30px;height:30px;flex:0 0 30px}}
+
+/* Extra comfort on small phones and landscape screens */
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; scroll-padding-top:12px }
+body{min-width:0;min-height:100vh;min-height:100svh;overflow-x:hidden}
+button,a{-webkit-tap-highlight-color:transparent}
+@media(max-width:760px){.hero-copy{position:relative;z-index:2}.arcade-art{pointer-events:none}.section-heading>div:first-child{min-width:0}.section-heading p{max-width:245px;line-height:1.4}.count-box{flex:0 0 auto}.game-card{touch-action:manipulation}.card-info{min-width:0;overflow-wrap:anywhere}.card-info h3{font-size:clamp(13px,3.8vw,16px);line-height:1.18}.card-description{font-size:10px}.install-card{max-height:calc(100svh - 24px);overflow:auto}.close-install{min-width:44px;min-height:44px}}
+@media(max-width:360px){.brand{gap:7px}.brand-gamepad{width:35px;height:35px;font-size:20px}.brand-text strong{font-size:13px;letter-spacing:-.4px}.brand-text small{font-size:6px;letter-spacing:1.2px}.install-btn{font-size:9px;padding:7px}.hero h1{font-size:37px}.game-card{grid-template-columns:78px minmax(0,1fr);min-height:152px}.card-info{padding:10px 8px}.card-description{font-size:9px}.card-bottom{flex-wrap:wrap}}
+@media(max-width:760px) and (orientation:landscape){.site-header{min-height:56px}.page{padding-top:9px}.hero{min-height:220px;padding:18px 22px}.hero h1{font-size:clamp(34px,6vw,46px);margin:10px 0}.arcade-art{top:0;bottom:0}.games-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.game-card{grid-template-columns:74px minmax(0,1fr);min-height:142px}.card-art{min-height:142px}}
