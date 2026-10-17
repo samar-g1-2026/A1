@@ -139,3 +139,6 @@ button{touch-action:manipulation}
 @supports(padding:max(0px)){
   .install-help{padding-top:max(12px,env(safe-area-inset-top));padding-bottom:max(12px,env(safe-area-inset-bottom))}
 }
+
+/* Mobile tap comfort */
+@media(max-width:760px){.hero-cta{min-height:44px}.install-btn{min-height:42px}.game-card{min-width:0}.play-pill b{width:30px;height:30px;flex:0 0 30px}}
