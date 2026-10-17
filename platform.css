@@ -80,3 +80,62 @@ footer{color:#8995a5}footer b{color:#ff8e85}
  .play-pill b{background:#0fa99e}
 }
 @media(max-width:390px){.brand-text em{display:inline}.hero{border-radius:19px}.hero h1{letter-spacing:-1.5px}}
+
+
+/* Phone-first polish: iPhone safe areas, Android touch targets, and landscape */
+html{min-height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:12px}
+body{min-width:0;min-height:100vh;min-height:100svh;overflow-x:clip}
+button,a{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+.site-header{padding-left:max(13px,env(safe-area-inset-left));padding-right:max(13px,env(safe-area-inset-right))}
+.page{padding-bottom:max(16px,env(safe-area-inset-bottom))}
+.game-card{min-width:0;-webkit-tap-highlight-color:transparent}
+.game-card:focus-visible,.hero-cta:focus-visible,.install-btn:focus-visible{outline:3px solid #8265e8;outline-offset:3px}
+@media(max-width:760px){
+  .site-header{gap:8px;min-height:66px;padding-top:8px;padding-bottom:8px}
+  .install-btn{min-height:42px;white-space:nowrap}
+  .teacher-avatar{flex:0 0 auto}
+  .hero{min-height:270px;padding-top:25px;padding-bottom:37px}
+  .hero-copy{max-width:100%;position:relative;z-index:2}
+  .arcade-art{pointer-events:none}
+  .hero-cta{min-height:44px}
+  .section-heading{align-items:center}
+  .section-heading>div:first-child{min-width:0}
+  .section-heading p{max-width:245px;line-height:1.4}
+  .count-box{flex:0 0 auto}
+  .game-card{min-height:156px;grid-template-columns:clamp(82px,25vw,108px) minmax(0,1fr);touch-action:manipulation}
+  .card-art{min-width:0}
+  .card-info{min-width:0;overflow-wrap:anywhere}
+  .card-info h3{font-size:clamp(13px,3.8vw,16px);line-height:1.18}
+  .card-description{font-size:10px}
+  .play-pill b{width:30px;height:30px;flex:0 0 30px}
+  .grade-pill{padding:6px}
+  .install-help{padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+  .install-card{max-height:calc(100svh - 24px);overflow:auto;padding:22px 18px}
+  .close-install{min-width:44px;min-height:44px}
+}
+@media(max-width:360px){
+  .brand{gap:7px}
+  .brand-gamepad{width:35px;height:35px;font-size:20px}
+  .brand-text strong{font-size:13px;letter-spacing:-.4px}
+  .brand-text small{font-size:6px;letter-spacing:1.2px}
+  .install-btn{font-size:9px;padding:7px}
+  .hero h1{font-size:37px}
+  .game-card{grid-template-columns:78px minmax(0,1fr);min-height:152px}
+  .card-info{padding:10px 8px}
+  .card-description{font-size:9px}
+  .card-bottom{flex-wrap:wrap}
+}
+@media(max-width:760px) and (orientation:landscape){
+  .site-header{min-height:56px}
+  .page{padding-top:9px}
+  .hero{min-height:220px;padding:18px 22px}
+  .hero h1{font-size:clamp(34px,6vw,46px);margin:10px 0}
+  .arcade-art{top:0;bottom:0}
+  .games-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .game-card{grid-template-columns:74px minmax(0,1fr);min-height:142px}
+  .card-art{min-height:142px}
+}
+@supports(padding:max(0px)){
+  .install-help{padding-top:max(12px,env(safe-area-inset-top));padding-bottom:max(12px,env(safe-area-inset-bottom))}
+}
