@@ -11,3 +11,72 @@ footer{display:flex;justify-content:space-between;gap:12px;padding:23px 2px 8px;
 @media(max-width:760px){.site-header{padding:10px 13px;min-height:69px;gap:8px}.brand-gamepad{width:39px;height:39px;font-size:22px;border-radius:12px}.brand-text strong{font-size:15px}.brand-text small{font-size:7px;letter-spacing:1.7px}.header-right{gap:9px}.install-btn{padding:8px 9px;font-size:10px}.teacher{gap:5px}.teacher-avatar{width:30px;height:30px;font-size:10px}.teacher b{font-size:8px}.teacher small{font-size:7px}.page{padding:13px 11px 16px}.hero{min-height:290px;padding:27px 21px;border-radius:20px}.hero-copy{max-width:100%;width:100%}.hero-kicker{font-size:8px;letter-spacing:1.2px}.hero h1{font-size:clamp(39px,10vw,53px);margin:16px 0 10px}.hero-copy p{font-size:11px;max-width:255px;line-height:1.5;margin-bottom:16px}.hero-cta{font-size:10px;padding:9px 11px;gap:15px}.hero-bottom{left:21px;bottom:12px}.hero-bottom b{font-size:11px}.hero-bottom span{font-size:6px}.arcade-art{width:48%;right:-5%;opacity:.58;top:45%;bottom:0}.pacman{width:85px;height:85px;left:29%;top:26%}.hero-ghost{font-size:36px;right:8%;top:16%}.hero-orb{transform:scale(.55);transform-origin:left center;left:4%;bottom:24%}.hero-star{font-size:20px}.s2{font-size:18px}.games-section{padding-top:25px}.section-heading{margin-bottom:12px}.section-kicker{font-size:7px;letter-spacing:1px}.section-heading h2{font-size:24px;margin:5px 0 3px}.section-heading p{font-size:9px}.count-box{padding:6px 7px;gap:6px;border-radius:10px}.count-box b{font-size:21px}.count-box span{font-size:6px}.games-grid{grid-template-columns:1fr;gap:10px}.game-card{grid-template-columns:96px minmax(0,1fr);min-height:146px;border-radius:14px}.card-art{min-height:146px}.card-number{left:8px;top:8px;font-size:8px}.card-tag{left:7px;bottom:7px;font-size:6px;padding:4px 5px}.art-orbit{width:70px;height:70px;box-shadow:0 0 0 8px #ffffff25,0 0 0 17px #ffffff15}.art-emoji{width:56px;height:56px;font-size:34px;border-radius:17px}.art-spark{font-size:15px}.spark-two{font-size:12px}.card-info{padding:10px 10px 9px}.card-ready{font-size:6px;letter-spacing:.4px}.card-ready i{width:5px;height:5px}.card-info h3{font-size:14px;margin:8px 0 3px}.card-subtitle{font-size:9px}.card-description{font-size:9px;line-height:1.35;margin:6px 0 8px}.grade-pill{font-size:6px;padding:5px}.play-pill{font-size:9px;gap:5px}.play-pill b{width:22px;height:22px;border-radius:7px;font-size:13px}footer{padding-top:16px;font-size:6px;letter-spacing:.8px}footer span+span{font-size:8px}}
 @media(max-width:390px){.teacher{display:none}.hero{min-height:275px}.hero h1{font-size:39px}.game-card{grid-template-columns:84px minmax(0,1fr)}.card-info h3{font-size:13px}.card-description{font-size:8px}.card-bottom{gap:3px}.play-pill{gap:3px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Cheerful, clean Learning Arcade home page refresh */
+:root{--night:#263654;--night2:#345a76;--cyan:#18b8ad;--purple:#8265e8;--pink:#ff8e85;--cream:#fff8df;--green:#6ed8b1;--ink:#263654;--muted:#6e7c92;--line:#e7edf1}
+body{background:radial-gradient(ellipse at 4% 2%,#fff0c7 0,transparent 28rem),radial-gradient(ellipse at 100% 24%,#d9f8ef 0,transparent 30rem),#f7f9fc;color:var(--ink)}
+.site-header{background:#ffffffeb;border-bottom:1px solid #e7edf1;box-shadow:0 4px 18px #30445c08}
+.brand{color:#263654}.brand-gamepad{background:linear-gradient(145deg,#23c8b8,#119e9c);box-shadow:0 5px 0 #0b827e33}
+.brand-text em{color:#0b9d94}.brand-text small{color:#8994a5}
+.install-btn{border-color:#dce8e6;background:#f7fffd;color:#237b78}.install-btn:hover{background:#e6faf5}
+.teacher-avatar{background:#fff0c8;color:#9b7008}
+.page{max-width:1240px;padding-top:26px}
+.hero{min-height:330px;border-radius:30px;background:linear-gradient(115deg,#e0f8f1 0%,#d9f4ff 52%,#f1e7ff 100%);color:#263654;box-shadow:0 15px 38px #38506b12;border:1px solid #fff;isolation:isolate}
+.hero:before{background-image:radial-gradient(#159c9550 1px,transparent 1.5px);opacity:.28}
+.hero-kicker{color:#237f7c}.hero-kicker i{background:#1bb7a9;box-shadow:0 0 12px #52d8c6}
+.hero h1{color:#293954;text-shadow:none;letter-spacing:-2.3px}
+.hero h1 span{color:#0b9d94;text-shadow:none}
+.hero-copy p{color:#61748b}
+.hero-cta{background:#fff;color:#267b78;border:1px solid #c8e8e2;box-shadow:0 4px 0 #c7e8e1}
+.hero-cta b{color:#ff987f}
+.hero-bottom{color:#72869a}.hero-bottom b{color:#0b9d94}
+.arcade-art{opacity:.9;background:repeating-linear-gradient(0deg,transparent 0 45px,#8acfc455 46px 49px),repeating-linear-gradient(90deg,transparent 0 54px,#8acfc455 55px 59px);clip-path:none;border-radius:45% 0 0 45%;left:auto;right:0;width:48%}
+.maze-lines{border-color:#79d6c5;opacity:.65;filter:none}
+.pacman{background:#ffce50;box-shadow:inset -10px -9px 0 #f3b43c,0 10px 20px #d69e3040}
+.pacman:after{background:#364a67}
+.hero-ghost{filter:none}.hero-orb{filter:none}
+.pixel-dot{background:#ffad9f;box-shadow:0 0 0 5px #ffad9f28}
+.hero-star{color:#9779e8}
+.games-section{padding-top:36px}
+.section-kicker{color:#0b9d94}
+.section-heading h2{color:#293954}
+.section-heading p{color:#718096}
+.count-box{border-color:#e6edf0;box-shadow:0 5px 14px #31485f08;background:#fff}
+.count-box b{color:#0b9d94}.count-box span{color:#8290a0}
+.games-grid{gap:18px}
+.game-card{border:1px solid #e9eef1;border-radius:22px;box-shadow:0 8px 25px #344b6010;min-height:226px}
+.game-card:hover{box-shadow:0 16px 32px #344b6019}
+.blue .card-art{background:linear-gradient(145deg,#bfeef8,#d6f7f0)}
+.mint .card-art{background:linear-gradient(145deg,#baf0dc,#e0fae9)}
+.orange .card-art{background:linear-gradient(145deg,#ffe5a0,#fff2cc)}
+.violet .card-art{background:linear-gradient(145deg,#d9ccff,#eee6ff)}
+.card-art:before{background:radial-gradient(circle at 50% 50%,#ffffffb0,transparent 58%)}
+.card-number{color:#4d637b}.card-tag{background:#ffffffa8;border-color:#ffffff;color:#496079}
+.art-orbit{border-color:#ffffffbd;box-shadow:0 0 0 13px #ffffff35,0 0 0 28px #ffffff22}
+.art-emoji{background:#ffffffed;box-shadow:0 10px 18px #46556c18}
+.spark-one,.spark-two{color:#fff;text-shadow:0 1px 3px #4b607055}
+.card-info{padding:18px 17px 14px}
+.card-ready{color:#73869a}.card-ready i{background:#27b99f}
+.card-info h3{color:#293954}
+.card-subtitle{color:#0b9d94}
+.card-description{color:#718096}
+.grade-pill{background:#f0f6f5;color:#64817e}
+.play-pill{color:#2c425a}
+.play-pill b{background:#0fa99e;color:#fff}
+.game-card:hover .play-pill b{background:#8265e8}
+footer{color:#8995a5}footer b{color:#ff8e85}
+.install-card{border:1px solid #e7edf1;box-shadow:0 18px 60px #1f344622}
+.install-icon{display:grid;place-items:center;width:56px;height:56px;border-radius:18px;background:#dff8f0}
+.install-card div:not(.install-icon){background:#f5faf9}
+@media(max-width:760px){
+ .hero{min-height:290px;background:linear-gradient(135deg,#e0f8f1,#d9f4ff 65%,#f1e7ff)}
+ .arcade-art{opacity:.56;background:repeating-linear-gradient(0deg,transparent 0 38px,#8acfc455 39px 42px),repeating-linear-gradient(90deg,transparent 0 40px,#8acfc455 41px 44px)}
+ .hero-copy{max-width:100%}
+ .hero h1{color:#293954;text-shadow:none}
+ .games-grid{gap:12px}
+ .game-card{border-radius:17px;min-height:150px}
+ .card-info{padding:11px 10px 9px}
+ .card-tag{color:#496079}
+ .play-pill b{background:#0fa99e}
+}
+@media(max-width:390px){.brand-text em{display:inline}.hero{border-radius:19px}.hero h1{letter-spacing:-1.5px}}
