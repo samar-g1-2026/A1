@@ -1,4 +1,4 @@
-const CACHE='grammar-adventure-v2';
+const CACHE='grammar-adventure-v3';
 const CORE=['./','./index.html','./platform.css','./manifest.json','./icon.svg'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('grammar-adventure-')&&key!==CACHE).map(key=>caches.delete(key)));await self.clients.claim()})()));
