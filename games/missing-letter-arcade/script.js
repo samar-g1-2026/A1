@@ -46,7 +46,7 @@ function setDirection(dx,dy){if(!running||paused)return;wanted={dx,dy};}
 function step(){
  if(!running||paused)return;
  const dx=wanted.dx,dy=wanted.dy;
- if(!dx&&!dy)return;
+ if(!dx&&!dy){player.dx=0;player.dy=0;draw();return;}
  const tx=player.x+dx,ty=player.y+dy;
  if(blocked(tx,ty)){draw();return}
  player.dx=dx;player.dy=dy;player.x=tx;player.y=ty;
