@@ -1,6 +1,7 @@
 'use strict';
 const WORDS=[
-['goal','A target in a game'],['goalie','The player who guards the goal'],['leader','A person who guides a group'],['stands','Seats for a crowd at a game'],['aboard','On or inside a ship, train, or plane'],['conductor','A person who leads an orchestra or checks train tickets'],['fancy','Decorative or special'],['space','The area beyond Earth'],['fluffy','Soft and full of fluff'],['cozy','Warm, comfortable, and snug'],['sunny','Bright with sunshine'],['snowy','Covered with or full of snow'],['agree','To have the same opinion'],['clubhouse','A building used by a club or team'],['decorate','To make something look pretty'],['measure','To find the size or amount of something'],['hail','Small balls of ice that fall from clouds'],['lightning','A bright flash in a storm'],['thunder','The loud sound during a storm'],['tornado','A powerful spinning column of air']
+['goal','A target in a game'],['goalie','The player who guards the goal'],['leader','A person who guides a group'],['stands','Seats for a crowd at a game'],['aboard','On or inside a ship, train, or plane'],['conductor','A person who leads an orchestra or checks train tickets'],['fancy','Decorative or special'],['space','The area beyond Earth'],['fluffy','Soft and full of fluff'],['cozy','Warm, comfortable, and snug'],['sunny','Bright with sunshine'],['snowy','Covered with or full of snow'],['agree','To have the same opinion'],['clubhouse','A building used by a club or team'],['decorate','To make something look pretty'],['measure','To find the size or amount of something'],['hail','Small balls of ice that fall from clouds'],['lightning','A bright flash in a storm'],['thunder','The loud sound during a storm'],['tornado','A powerful spinning column of air'],
+['bunny','A small rabbit'],['stretch','To make your body or arms longer'],['stand up','To rise to your feet'],['vacuum cleaner','A machine that cleans floors'],['lovely','Very nice or beautiful'],['sturdy','Strong and not easy to break'],['cheery','Happy and cheerful'],['creative','Good at making new things']
 ];
 const MAP=[
 '###############',
@@ -54,7 +55,7 @@ function step(){
  draw();
 }
 function showQuestion(){
- paused=true;const item=questions[qIndex];item.missing=Math.floor(Math.random()*item.word.length);item.answer=item.word[item.missing];
+ paused=true;const item=questions[qIndex];const letterIndexes=[...item.word].map((c,i)=>/[a-z]/i.test(c)?i:-1).filter(i=>i>=0);item.missing=letterIndexes[Math.floor(Math.random()*letterIndexes.length)];item.answer=item.word[item.missing];
  $('qCount').textContent='QUESTION '+(qIndex+1)+' / 10';
  $('word').innerHTML=[...item.word].map((c,i)=>'<span class="letter '+(i===item.missing?'missing':'')+'">'+(i===item.missing?'_':c)+'</span>').join('');
  $('hint').textContent=item.hint;$('feedback').textContent='Choose the missing letter!';$('feedback').className='feedback';
