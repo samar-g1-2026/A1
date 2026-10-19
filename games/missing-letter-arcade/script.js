@@ -1,7 +1,7 @@
 'use strict';
 const WORDS=[
 ['goal','A target in a game'],['goalie','The player who guards the goal'],['leader','A person who guides a group'],['stands','Seats for a crowd at a game'],['aboard','On or inside a ship, train, or plane'],['conductor','A person who leads an orchestra or checks train tickets'],['fancy','Decorative or special'],['space','The area beyond Earth'],['fluffy','Soft and full of fluff'],['cozy','Warm, comfortable, and snug'],['sunny','Bright with sunshine'],['snowy','Covered with or full of snow'],['agree','To have the same opinion'],['clubhouse','A building used by a club or team'],['decorate','To make something look pretty'],['measure','To find the size or amount of something'],['hail','Small balls of ice that fall from clouds'],['lightning','A bright flash in a storm'],['thunder','The loud sound during a storm'],['tornado','A powerful spinning column of air'],
-['bunny','A small rabbit'],['stretch','To make your body or arms longer'],['stand up','To rise to your feet'],['vacuum cleaner','A machine that cleans floors'],['lovely','Very nice or beautiful'],['sturdy','Strong and not easy to break'],['cheery','Happy and cheerful'],['creative','Good at making new things']
+['bony','Very thin, with bones easy to see'],['stretch','To make your body or arms longer'],['stand up','To rise to your feet'],['vacuum cleaner','A machine that cleans floors'],['lovely','Very nice or beautiful'],['sturdy','Strong and not easy to break'],['cheery','Happy and cheerful'],['creative','Good at making new things']
 ];
 const MAP=[
 '###############',
@@ -41,7 +41,7 @@ function setup(){
  let cells=[];MAP.forEach((row,y)=>[...row].forEach((c,x)=>{if(c==='.'&&!(x===1&&y===1))cells.push({x,y})}));orbs=shuffle(cells).slice(0,10);
  $('score').textContent='0000';$('progress').textContent='0 / 10';$('orbs').textContent='10';$('lives').textContent='3';$('startScreen').hidden=false;$('questionModal').hidden=true;$('result').hidden=true;resize();
 }
-function startGame(){if(running)return;running=true;paused=false;$('startScreen').hidden=true;player.dx=0;player.dy=0;wanted={dx:0,dy:0};clearInterval(moveTimer);moveTimer=setInterval(step,260);draw()}
+function startGame(){if(running)return;running=true;paused=false;$('startScreen').hidden=true;player.dx=0;player.dy=0;wanted={dx:0,dy:0};clearInterval(moveTimer);moveTimer=setInterval(step,420);draw()}
 function setDirection(dx,dy){if(!running||paused)return;wanted={dx,dy};}
 function step(){
  if(!running||paused)return;
