@@ -60,8 +60,8 @@ function move(dir){
  if(dir==='down'){items.forEach(it=>{if(!it.got&&!it.missed)it.z+=.025})}
  // Every player action advances the run a little, but nothing moves on its own.
  if(dir==='left'||dir==='right')items.forEach(it=>{if(!it.got&&!it.missed)it.z+=.035});
- items.forEach(it=>{if(!it.got&&!it.missed&&it.z>=.82){if(it.lane===playerLane){it.got=true;showQuestion()}else{it.missed=true}}});
- if(items.every(it=>it.got||it.missed)){if(qIndex>=10)finish();else if(items.some(it=>!it.got&&!it.missed)){}else finish()}
+ items.forEach(it=>{if(!it.got&&!it.missed&&it.z>=.82){if(it.lane===playerLane){it.got=true;showQuestion()}else{it.z=.18;it.lane=Math.floor(Math.random()*3)}}});
+ if(qIndex>=10)finish();
  draw();
 }
 function showQuestion(){
