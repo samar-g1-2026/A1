@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050914"><title>Pac Maze Word Quest | Grammar Adventure</title><link rel="stylesheet" href="style.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#050914"><title>Subway Letter Run | Grammar Adventure</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="topbar"><a class="back" href="../../index.html">← Games</a><div class="brand"><span class="brand-dot">●</span><span>WORD MAZE ARCADE</span></div><button id="soundBtn" class="sound">🔊</button></header>
+<header class="topbar"><a class="back" href="../../index.html">← Games</a><div class="brand"><span class="brand-dot">●</span><span>SUBWAY LETTER RUN</span></div><button id="soundBtn" class="sound">🔊</button></header>
 <main class="shell">
-  <section class="intro"><div class="eyebrow">ARCADE MODE • GRADE 1</div><h1>Pac Maze <span>Word Quest</span></h1><p>Move around the maze, collect glowing orbs, and answer 10 word challenges!</p></section>
+  <section class="intro"><div class="eyebrow">SUBWAY RUN • GRADE 1</div><h1>Subway <span>Letter Run</span></h1><p>Switch lanes on the subway tracks, collect stars, and answer 10 word challenges!</p></section>
   <section class="cabinet">
     <div class="scorebar"><span>1UP <b id="score">0000</b></span><span>STAGE <b>01</b></span><span>WORDS <b id="progress">0 / 10</b></span></div>
-    <div class="screen"><canvas id="game" aria-label="Interactive arcade maze game" role="img"></canvas><div id="startScreen" class="start-screen"><div class="start-emoji">🟡</div><h2>READY PLAYER?</h2><p>Move with arrow keys or the controls below.</p><button id="startBtn" class="primary">START GAME</button></div></div>
-    <div class="legend"><span><i class="orb"></i> Collect glowing orbs</span><span>⭐ <b id="orbs">10</b> left</span><span>❤️ <b id="lives">3</b> lives</span></div>
+    <div class="screen"><canvas id="game" aria-label="Interactive arcade maze game" role="img"></canvas><div id="startScreen" class="start-screen"><div class="start-emoji">🟡</div><h2>READY PLAYER?</h2><p>Tap the arrows or swipe to move between the tracks.</p><button id="startBtn" class="primary">START GAME</button></div></div>
+    <div class="legend"><span><i class="orb"></i> Collect golden stars</span><span>⭐ <b id="orbs">10</b> left</span><span>❤️ <b id="lives">3</b> lives</span></div>
   </section>
   <section class="controls" aria-label="Movement controls"><button data-dir="up" aria-label="Move up">▲</button><div><button data-dir="left" aria-label="Move left">◀</button><button data-dir="down" aria-label="Move down">▼</button><button data-dir="right" aria-label="Move right">▶</button></div></section>
-  <p class="tip">Use arrow keys / WASD or tap the arrows. Collect a glowing orb to unlock a question.</p>
+  <p class="tip">Tap left or right to switch tracks. Tap up to run forward. Every move is yours—there is no automatic movement.</p>
   <section id="questionModal" class="overlay" hidden><div class="question-card"><div class="qtop"><span>⚡ WORD CHALLENGE</span><span id="qCount">1 / 10</span></div><h2>Fill in the missing letter</h2><div id="word" class="word"></div><p id="hint" class="hint"></p><div id="choices" class="choices"></div><div id="feedback" class="feedback" aria-live="polite">Choose the correct letter.</div></div></section>
   <section id="result" class="overlay" hidden><div class="question-card result-card"><div class="trophy">🏆</div><h2>ARCADE CHAMPION!</h2><p id="resultText"></p><button id="again" class="primary">PLAY AGAIN</button><a class="secondary" href="../../index.html">BACK TO GAMES</a></div></section>
 </main><script src="script.js"></script></body></html>
