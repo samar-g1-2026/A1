@@ -37,9 +37,9 @@ const games=[
 const grid=document.getElementById('gamesGrid'),searchInput=document.getElementById('gameSearch'),noGames=document.getElementById('noGames');
 let activeFilter='all';
 function renderGames(){
- const term=(searchInput?.value||'').trim().toLowerCase();
+ const term=(searchInput.value||'').trim().toLowerCase();
  const filtered=games.filter(g=>(activeFilter==='all'||g.tag===activeFilter)&&[g.title,g.subtitle,g.description,g.tag].some(v=>v.toLowerCase().includes(term)));
- grid.innerHTML=filtered.map(g=>`<a class="game-card ${g.theme}" href="${g.href}" aria-label="Play ${g.title}"><div class="card-art"><span class="card-number">${g.number}</span><span class="card-tag">${g.tag}</span><div class="art-orbit"></div><div class="art-emoji">${g.icon}</div><span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span></div><div class="card-info"><span class="card-ready"><i></i> READY TO PLAY</span><h3>${g.title}</h3><p class="card-subtitle">${g.subtitle}</p><p class="card-description">${g.description}</p><div class="card-bottom"><span class="grade-pill">GRADE 1</span><span class="play-pill">Play Game <b>→</b></span></div></div></a>`).join('');
+ grid.innerHTML=filtered.map(g=>'<a class="game-card '+g.theme+'" href="'+g.href+'" aria-label="Play '+g.title+'"><div class="card-art"><span class="card-number">'+g.number+'</span><span class="card-tag">'+g.tag+'</span><div class="art-orbit"></div><div class="art-emoji">'+g.icon+'</div><span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span></div><div class="card-info"><span class="card-ready"><i></i> READY TO PLAY</span><h3>'+g.title+'</h3><p class="card-subtitle">'+g.subtitle+'</p><p class="card-description">'+g.description+'</p><div class="card-bottom"><span class="grade-pill">GRADE 1</span><span class="play-pill">Play Game <b>→</b></span></div></div></a>').join('');
  document.getElementById('totalGames').textContent=String(filtered.length).padStart(2,'0');
  noGames.hidden=filtered.length!==0;
 }
