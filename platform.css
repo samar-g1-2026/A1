@@ -230,3 +230,22 @@ body{background:linear-gradient(135deg,#f6f2ff 0%,#f1f8ff 48%,#f9f2ff 100%)}
  .progress-strip>div{padding:8px 2px}
 }
 @media(prefers-reduced-motion:reduce){.game-card,.art-emoji{transition:none!important}}
+
+
+/* Organized game library: search, categories, and clearer responsive layout */
+.game-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+.game-search{display:flex;align-items:center;gap:9px;flex:1 1 220px;max-width:360px;min-height:46px;padding:0 14px;border:1px solid #e0e9ed;border-radius:15px;background:#fff;box-shadow:0 5px 14px #31485f08;color:#8190a3}
+.game-search span{font-size:24px;line-height:1}
+.game-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#273654;font:700 13px Nunito,system-ui,sans-serif}
+.game-search input::placeholder{color:#9aa5b5}
+.game-filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.filter-chip{min-height:40px;padding:8px 13px;border:1px solid #e0e8ed;border-radius:999px;background:#ffffffd9;color:#63758a;font:800 11px Nunito,system-ui,sans-serif;transition:background .15s,color .15s,transform .15s}
+.filter-chip:hover{transform:translateY(-1px);border-color:#b8e8df}
+.filter-chip.active{background:#263654;border-color:#263654;color:#fff;box-shadow:0 4px 0 #26365420}
+.no-games{padding:25px 16px;border:1px dashed #cadbdc;border-radius:18px;text-align:center;color:#6e7c92;background:#ffffffa8;font-size:13px}
+.no-games[hidden]{display:none}
+.games-grid{align-items:stretch}
+.game-card{height:100%;min-width:0}
+.card-description{overflow-wrap:anywhere}
+@media(max-width:760px){.game-tools{align-items:stretch;gap:10px;margin-bottom:13px}.game-search{max-width:none;flex-basis:100%;min-height:44px}.game-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.filter-chip{padding:8px 4px;min-height:39px;font-size:10px}.no-games{font-size:12px;padding:20px 12px}}
+@media(max-width:360px){.game-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.filter-chip{font-size:11px}}
