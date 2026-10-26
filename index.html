@@ -16,26 +16,36 @@
   <div class="arcade-art" aria-hidden="true"><div class="maze-lines"></div><span class="pixel-dot d1"></span><span class="pixel-dot d2"></span><span class="pixel-dot d3"></span><span class="pixel-dot d4"></span><span class="hero-ghost">👾</span><div class="pacman"></div><span class="hero-star">✦</span><span class="hero-star s2">✧</span><div class="hero-orb"></div></div>
   <div class="hero-bottom"><b>01</b><span>CURIOSITY<br>STARTS HERE</span></div>
  </section>
- <section class="daily-card" aria-label="Daily goal"><div class="daily-star">⭐</div><div><b>Daily Goal</b><p>Play, learn, and collect your Magic Keys!</p><small>Every game makes you stronger.</small></div><span class="daily-count">4 GAMES</span></section>
+ <section class="daily-card" aria-label="Learning hub welcome"><div class="daily-star">⭐</div><div><b>Your Learning Adventure</b><p>Choose a skill, play a challenge, and grow your English step by step.</p><small>Made especially for Grade 1 learners.</small></div><span class="daily-count">4 GAMES</span></section>
  <section id="games" class="games-section">
-  <div class="section-heading"><div><span class="section-kicker">CHOOSE YOUR CHALLENGE</span><h2>Explore the games</h2><p>Four ways to make learning feel like play.</p></div><div class="count-box"><b id="totalGames">04</b><span>GAMES<br>READY</span></div></div>
-  <div id="gamesGrid" class="games-grid"></div>
+  <div class="section-heading"><div><span class="section-kicker">YOUR GAME LIBRARY</span><h2>Explore all games</h2><p>Search by game name or choose a learning skill.</p></div><div class="count-box"><b id="totalGames">04</b><span>GAMES<br>READY</span></div></div>
+  <div class="game-tools"><label class="game-search"><span aria-hidden="true">⌕</span><input id="gameSearch" type="search" placeholder="Search games..." aria-label="Search games"></label><div class="game-filters" role="group" aria-label="Filter games"><button class="filter-chip active" data-filter="all" aria-pressed="true">All games</button><button class="filter-chip" data-filter="VOCABULARY" aria-pressed="false">Vocabulary</button><button class="filter-chip" data-filter="GRAMMAR" aria-pressed="false">Grammar</button><button class="filter-chip" data-filter="LETTERS" aria-pressed="false">Letters</button></div></div>
+  <div id="gamesGrid" class="games-grid" aria-live="polite"></div><p id="noGames" class="no-games" hidden>No games match your search. Try another word or skill.</p>
  </section>
- <section id="progress" class="progress-strip" aria-label="Learning progress"><div><span>📚</span><b>Lessons</b><strong>24</strong><small>completed</small></div><div><span>🔥</span><b>Streak</b><strong>7</strong><small>days</small></div><div><span>🏅</span><b>Badges</b><strong>5</strong><small>earned</small></div></section>
+ <section id="progress" class="progress-strip" aria-label="Learning tips"><div><span>📚</span><b>Practice</b><strong>Daily</strong><small>A little every day</small></div><div><span>🎯</span><b>Focus</b><strong>One skill</strong><small>Choose a challenge</small></div><div><span>🏅</span><b>Celebrate</b><strong>Every try</strong><small>Keep learning</small></div></section>
  <footer><span>GRAMMAR ADVENTURE</span><span>Made for curious minds <b>♥</b></span></footer>
 </main>
-<nav class="mobile-nav" aria-label="Main navigation"><a class="active" href="./"><span>⌂</span><small>Home</small></a><a href="#games"><span>📘</span><small>Learn</small></a><a href="#games"><span>🎮</span><small>Games</small></a><a href="#progress"><span>⭐</span><small>Rewards</small></a><a href="#profile"><span>👤</span><small>Profile</small></a></nav>
+<nav class="mobile-nav" aria-label="Main navigation"><a class="active" href="./"><span>⌂</span><small>Home</small></a><a href="#games"><span>📘</span><small>Learn</small></a><a href="#games"><span>🎮</span><small>Games</small></a><a href="#progress"><span>⭐</span><small>Rewards</small></a><a href="#progress"><span>💡</span><small>Tips</small></a></nav>
 <div id="installHelp" class="install-help" hidden><div class="install-card"><button id="closeInstall" class="close-install">×</button><div class="install-icon">🎮</div><h3>Take your games anywhere</h3><p>Add Grammar Adventure to your home screen for quick access.</p><div><b>iPhone / iPad</b><span>Open in Safari → Share ↗ → Add to Home Screen → Add.</span></div><div><b>Android</b><span>Open in Chrome, tap ⋮, then choose Install app or Add to Home screen.</span></div><div><b>Computer</b><span>Use the install icon in Chrome or Edge, if available.</span></div></div></div>
 <script>
 const games=[
- {title:'Missing Letter Arcade',subtitle:'Complete the Word',description:'Move, collect, and complete the missing letter!',tag:'VOCABULARY',icon:'🟡',theme:'blue',number:'01',href:'games/missing-letter-arcade/'},
- {title:'Capital Letter Maze',subtitle:'Days & Months',description:'Find the correct capital letters and reach the goal!',tag:'LETTERS',icon:'🔤',theme:'mint',number:'02',href:'games/capital-letter-maze/'},
- {title:'Singular and Plural',subtitle:'Grammar Adventure',description:'Choose the correct form and collect the items!',tag:'GRAMMAR',icon:'💎',theme:'orange',number:'03',href:'games/noun-jewel-heist/'},
- {title:'Vocabulary Revision',subtitle:'Context Clues',description:'Use clues, find the answer, and level up!',tag:'VOCABULARY',icon:'⚡',theme:'violet',number:'04',href:'games/vocabulary-revision/'}
+ {title:'Missing Letter Arcade',subtitle:'3D Word Runner',description:'Run the tracks, collect coins, and complete missing letters.',tag:'VOCABULARY',icon:'🚇',theme:'blue',number:'01',href:'games/missing-letter-arcade/'},
+ {title:'Capital Letter Maze',subtitle:'Days & Months',description:'Find capital letters and guide your way through the maze.',tag:'LETTERS',icon:'🔤',theme:'mint',number:'02',href:'games/capital-letter-maze/'},
+ {title:'Singular and Plural',subtitle:'Grammar Adventure',description:'Practice nouns and choose the correct singular or plural form.',tag:'GRAMMAR',icon:'💎',theme:'orange',number:'03',href:'games/noun-jewel-heist/'},
+ {title:'Vocabulary Revision',subtitle:'Context Clues',description:'Use clues to discover word meanings and build vocabulary.',tag:'VOCABULARY',icon:'🧩',theme:'violet',number:'04',href:'games/vocabulary-revision/'}
 ];
-const grid=document.getElementById('gamesGrid');
-grid.innerHTML=games.map(g=>`<a class="game-card ${g.theme}" href="${g.href}"><div class="card-art"><span class="card-number">${g.number}</span><span class="card-tag">${g.tag}</span><div class="art-orbit"></div><div class="art-emoji">${g.icon}</div><span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span></div><div class="card-info"><span class="card-ready"><i></i> READY TO PLAY</span><h3>${g.title}</h3><p class="card-subtitle">${g.subtitle}</p><p class="card-description">${g.description}</p><div class="card-bottom"><span class="grade-pill">GRADE 1</span><span class="play-pill">Play Game <b>→</b></span></div></div></a>`).join('');
-document.getElementById('totalGames').textContent=String(games.length).padStart(2,'0');
+const grid=document.getElementById('gamesGrid'),searchInput=document.getElementById('gameSearch'),noGames=document.getElementById('noGames');
+let activeFilter='all';
+function renderGames(){
+ const term=(searchInput?.value||'').trim().toLowerCase();
+ const filtered=games.filter(g=>(activeFilter==='all'||g.tag===activeFilter)&&[g.title,g.subtitle,g.description,g.tag].some(v=>v.toLowerCase().includes(term)));
+ grid.innerHTML=filtered.map(g=>`<a class="game-card ${g.theme}" href="${g.href}" aria-label="Play ${g.title}"><div class="card-art"><span class="card-number">${g.number}</span><span class="card-tag">${g.tag}</span><div class="art-orbit"></div><div class="art-emoji">${g.icon}</div><span class="art-spark spark-one">✦</span><span class="art-spark spark-two">✧</span></div><div class="card-info"><span class="card-ready"><i></i> READY TO PLAY</span><h3>${g.title}</h3><p class="card-subtitle">${g.subtitle}</p><p class="card-description">${g.description}</p><div class="card-bottom"><span class="grade-pill">GRADE 1</span><span class="play-pill">Play Game <b>→</b></span></div></div></a>`).join('');
+ document.getElementById('totalGames').textContent=String(filtered.length).padStart(2,'0');
+ noGames.hidden=filtered.length!==0;
+}
+document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{activeFilter=btn.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});renderGames()}));
+searchInput.addEventListener('input',renderGames);
+renderGames();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 const installBtn=document.getElementById('installBtn'),installHelp=document.getElementById('installHelp'),closeInstall=document.getElementById('closeInstall');let deferredPrompt=null;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;});
