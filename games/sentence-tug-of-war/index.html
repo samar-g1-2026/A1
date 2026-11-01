@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#eaf8f5"><title>Sentence Tug-of-War | Grammar Adventure</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="top"><a href="../../index.html">← Games</a><div class="brand">⚓ SENTENCE TUG-OF-WAR</div><span class="grade">GRADE 1</span></header>
+<main class="wrap"><section class="intro"><span class="eyebrow">UNIT 2 • LESSON 3 • GRAMMAR</span><h1>Sentence <em>Tug-of-War!</em></h1><p>Choose the sentence where the noun and verb work together. Help the blue team win!</p></section>
+<section class="game">
+ <div class="stats"><div><small>ROUND</small><b id="round">1 / 10</b></div><div><small>YOUR POINTS</small><b id="points">0</b></div><div><small>TEAM POWER</small><b id="power">0</b></div></div>
+ <section class="arena" aria-label="Tug of war game">
+  <div class="sky"><span class="cloud c1">☁</span><span class="cloud c2">☁</span><span class="sun">☀</span></div>
+  <div class="team-label left-label">🔵 BLUE TEAM</div><div class="team-label right-label">🔴 RED TEAM</div>
+  <div class="players"><div class="team blue"><span class="kid">🧒🏻</span><span class="kid">👧🏻</span><span class="kid">🧒🏽</span></div><div class="team red"><span class="kid">👦🏻</span><span class="kid">👧🏽</span><span class="kid">🧒🏼</span></div></div>
+  <div class="rope-area"><div class="rope"></div><div class="marker" id="marker">⭐</div><div class="center-line"></div></div>
+  <div class="ground"></div><div class="result-burst" id="burst" aria-live="polite"></div>
+ </section>
+ <div class="question"><div class="question-top"><span>🧠 GRAMMAR CHALLENGE</span><span id="streak">🔥 0 streak</span></div><h2>Which sentence is correct?</h2><p class="hint" id="hint">Look at the noun. Does the verb match?</p>
+  <div class="answers"><button class="answer" id="leftAnswer"><span class="side">A</span><span class="sentence" id="leftText"></span><span class="tap">CHOOSE THIS SENTENCE</span></button><button class="answer" id="rightAnswer"><span class="side">B</span><span class="sentence" id="rightText"></span><span class="tap">CHOOSE THIS SENTENCE</span></button></div>
+  <div id="feedback" class="feedback" aria-live="polite">Choose A or B to pull the rope!</div>
+  <button id="next" class="next" hidden>Next round →</button>
+ </div>
+</section>
+<section class="learn"><b>⭐ Remember!</b><p>A singular noun needs a singular verb: <strong>The girl plays.</strong><br>A plural noun needs a plural verb: <strong>The girls play.</strong></p></section>
+</main>
+<div class="modal" id="end" hidden><div class="modal-card"><div class="trophy" id="trophy">🏆</div><h2 id="endTitle">Amazing teamwork!</h2><p id="endText"></p><button id="again">PLAY AGAIN</button><a href="../../index.html">Back to games</a></div></div>
+<script src="script.js"></script></body></html>
